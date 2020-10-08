@@ -14,6 +14,8 @@ public class WeightLimit : MonoBehaviour
 
     Rigidbody[] otherRBs;
 
+    Rigidbody otherRB;
+
     // Update is called once per frame
     void Update()
     {
@@ -21,7 +23,7 @@ public class WeightLimit : MonoBehaviour
 
 
     }
-
+    /*
     void CheckObjects()
     {
 
@@ -33,10 +35,23 @@ public class WeightLimit : MonoBehaviour
 
 
     }
-
+    */
 
     private void OnCollisionStay(Collision collision)
     {
-        
+
+        if (collision.collider.tag == "Obstacle")
+        {
+            otherRB = collision.collider.GetComponent<Rigidbody>();
+            if (otherRB != null)
+            {
+                if (otherRB.mass > maxWeight)
+                {
+                    gameObject.SetActive(false);
+                }
+            }
+
+        }
+
     }
 }

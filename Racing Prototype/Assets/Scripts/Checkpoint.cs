@@ -10,6 +10,8 @@ public class Checkpoint : MonoBehaviour
         
     }
 
+    public int checkNum;
+
     // Update is called once per frame
     void Update()
     {
