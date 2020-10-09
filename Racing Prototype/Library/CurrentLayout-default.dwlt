@@ -46,7 +46,7 @@ MonoBehaviour:
     y: 0
     width: 1920
     height: 998
-  m_MinSize: {x: 875, y: 300}
+  m_MinSize: {x: 875, y: 542}
   m_MaxSize: {x: 10000, y: 10000}
   m_UseTopView: 1
   m_TopViewHeight: 30
@@ -122,7 +122,7 @@ MonoBehaviour:
   m_MinSize: {x: 881, y: 492}
   m_MaxSize: {x: 18004, y: 14042}
   vertical: 0
-  controlID: 15915
+  controlID: 137
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -147,7 +147,7 @@ MonoBehaviour:
   m_MinSize: {x: 605, y: 492}
   m_MaxSize: {x: 14003, y: 14042}
   vertical: 1
-  controlID: 15916
+  controlID: 138
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -173,7 +173,7 @@ MonoBehaviour:
   m_MinSize: {x: 605, y: 221}
   m_MaxSize: {x: 12005, y: 4021}
   vertical: 0
-  controlID: 15896
+  controlID: 76
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -278,7 +278,7 @@ MonoBehaviour:
   m_MinSize: {x: 285, y: 271}
   m_MaxSize: {x: 14003, y: 10021}
   vertical: 0
-  controlID: 15917
+  controlID: 139
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -441,7 +441,7 @@ MonoBehaviour:
     m_VAllowExceedBaseRangeMin: 1
     m_VAllowExceedBaseRangeMax: 1
     m_ScaleWithWindow: 0
-    m_HSlider: 0
+    m_HSlider: 1
     m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
     m_EnableMouseInput: 1
@@ -455,18 +455,18 @@ MonoBehaviour:
       y: 21
       width: 623
       height: 619
-    m_Scale: {x: 0.60839844, y: 0.60839844}
-    m_Translation: {x: 311.5, y: 309.5}
+    m_Scale: {x: 0.6847577, y: 0.6847577}
+    m_Translation: {x: 347.46686, y: 309.5}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -512
-      y: -508.71268
-      width: 1024
-      height: 1017.42535
+      x: -507.43036
+      y: -451.98468
+      width: 909.81085
+      height: 903.96936
     m_MinimalGUI: 1
   m_defaultScale: 0.60839844
   m_LastWindowPixelSize: {x: 623, y: 640}
@@ -502,24 +502,24 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 32}
+      scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 42cee7ff0295eeff5efbffff7a3a0000fa3a0000003b0000
+      m_ExpandedIDs: 52fbffff823a0000483b0000a03b0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: 
-        m_OriginalName: 
+        m_Name: Glisten
+        m_OriginalName: Glisten
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 0
+        m_UserData: -344262
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 11
+        m_OriginalEventType: 0
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 8}
       m_SearchString: 
@@ -565,9 +565,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 69.37876, y: 52.17478, z: 74.20318}
+    m_Target: {x: 38.516895, y: 10.478624, z: -28.78917}
     speed: 2
-    m_Value: {x: 69.37876, y: 52.17478, z: 74.20318}
+    m_Value: {x: 38.516895, y: 10.478624, z: -28.78917}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -614,13 +614,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.104745954, y: -0.23496634, z: 0.02546781, w: -0.96608406}
+    m_Target: {x: -0.180979, y: -0.20210852, z: 0.0380979, w: -0.9618277}
     speed: 2
-    m_Value: {x: -0.10767487, y: -0.23342268, z: 0.02600937, w: -0.9660453}
+    m_Value: {x: -0.18240646, y: -0.20203444, z: 0.03839794, w: -0.96147573}
   m_Size:
-    m_Target: 100.55038
+    m_Target: 43.203857
     speed: 2
-    m_Value: 100.55038
+    m_Value: 41.343403
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -769,12 +769,12 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts
+    - Assets/Prefabs/EffectPrefabs
     m_Globs: []
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scripts
+  - Assets/Prefabs/EffectPrefabs
   m_LastFoldersGridSize: -1
   m_LastProjectPath: D:\Unity\RacingGame Prototype1\PrototypingRacingGame\Racing
     Prototype
@@ -782,9 +782,9 @@ MonoBehaviour:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 2e3d0000
-    m_LastClickedID: 15662
-    m_ExpandedIDs: 00000000943c000000ca9a3b
+    m_SelectedIDs: 9a3e0000
+    m_LastClickedID: 16026
+    m_ExpandedIDs: 00000000a43d00003e3e000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -812,7 +812,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000943c000000ca9a3b
+    m_ExpandedIDs: 00000000a43d0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 

@@ -7,8 +7,9 @@ public class PickUpItems : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        itemTypeb = (byte)Random.Range(0, 1);
-
+        eventHolder = GameObject.Find("EventHolder");
+    //    itemTypeb = (byte)Random.Range(0, 1);
+    /*
         if (itemTypeb == 0)
         {
             isPositive = false;
@@ -17,11 +18,12 @@ public class PickUpItems : MonoBehaviour
         {
             isPositive = true;
         }
-
+        */
     }
 
     byte itemTypeb;
-    bool isPositive;
+    public bool isPositive;
+    public GameObject eventHolder;
 
     // Update is called once per frame
     void Update()
@@ -33,7 +35,14 @@ public class PickUpItems : MonoBehaviour
     {
         if (collision.collider.tag == "Player")
         {
-
+            if (isPositive == true)
+            {
+                eventHolder.GetComponent<EventHolder>().PositiveEvent();
+            }
+            else if (isPositive == false)
+            {
+                eventHolder.GetComponent<EventHolder>().NegativeEvent();
+            }
 
             Destroy(gameObject);
 

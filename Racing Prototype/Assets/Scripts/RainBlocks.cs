@@ -7,7 +7,7 @@ public class RainBlocks : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        spawnBlocks();
+    //    spawnBlocks();
     }
     public GameObject block;
 
@@ -18,7 +18,7 @@ public class RainBlocks : MonoBehaviour
         
     }
 
-    void spawnBlocks()
+    public void spawnBlocks()
     {
 
         for (int i = 0; i < num; i++)
