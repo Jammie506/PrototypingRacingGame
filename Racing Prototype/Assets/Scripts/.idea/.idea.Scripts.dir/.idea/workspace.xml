@@ -21,6 +21,7 @@
         <option value="$PROJECT_DIR$/Checkpoint.cs" />
         <option value="$PROJECT_DIR$/Lap.cs" />
         <option value="$PROJECT_DIR$/truckLap.cs" />
+        <option value="$PROJECT_DIR$/RespawnPlayer.cs" />
       </list>
     </option>
   </component>
@@ -50,13 +51,14 @@
       <option name="presentableId" value="Default" />
       <updated>1602348884135</updated>
       <workItem from="1602348899430" duration="2438000" />
+      <workItem from="1602431000784" duration="1186000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="UnityProjectConfiguration" hasMinimizedUI="null" />
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
