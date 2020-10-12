@@ -111,6 +111,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPositive: 0
   eventHolder: {fileID: 0}
+  effect: {fileID: 23761486146076926, guid: d1a02bf183ee9794e851b8da2bd65c67, type: 3}
 --- !u!1001 &8752793749419923405
 PrefabInstance:
   m_ObjectHideFlags: 0

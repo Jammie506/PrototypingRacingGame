@@ -24,6 +24,7 @@ public class PickUpItems : MonoBehaviour
     byte itemTypeb;
     public bool isPositive;
     public GameObject eventHolder;
+    public GameObject effect;
 
     // Update is called once per frame
     void Update()
@@ -44,6 +45,8 @@ public class PickUpItems : MonoBehaviour
                 eventHolder.GetComponent<EventHolder>().NegativeEvent();
             }
 
+
+            Instantiate(effect, transform.position, Quaternion.identity);
             Destroy(gameObject);
 
         }
