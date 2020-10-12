@@ -34,6 +34,7 @@ public class ObstacleHealth : MonoBehaviour
 
         if (collision.collider.tag == "Ground" || collision.collider.tag == "GroundDestructible")
         {
+            
             Instantiate(hitEffect, transform.position, Quaternion.identity);
         }
 

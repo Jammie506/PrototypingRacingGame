@@ -16,6 +16,9 @@ public class WeightLimit : MonoBehaviour
 
     Rigidbody otherRB;
 
+    public GameObject destroyedEffect;
+    private int effectNumRng;
+
     // Update is called once per frame
     void Update()
     {
@@ -47,6 +50,12 @@ public class WeightLimit : MonoBehaviour
             {
                 if (otherRB.mass > maxWeight)
                 {
+                    effectNumRng = Random.Range(5,10);
+                    for (int i = 0; i < effectNumRng; i++)
+                    {
+                        Instantiate(destroyedEffect,new Vector3(transform.position.x - Random.Range(-10,0),transform.position.y,transform.position.z - Random.Range(0,10)),Quaternion.identity);
+                    }
+
                     gameObject.SetActive(false);
                 }
             }
