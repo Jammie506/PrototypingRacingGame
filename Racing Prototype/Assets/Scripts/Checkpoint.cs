@@ -4,17 +4,20 @@ using UnityEngine;
 
 public class Checkpoint : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public int checkInd;
 
-    public int checkNum;
-
-    // Update is called once per frame
-    void Update()
+    void OnTriggerEnter(Collider other)
     {
-        
+        if (other.GetComponent<truckLap>())
+        {
+            truckLap Truck = other.GetComponent<truckLap>();
+
+            if (Truck.checkpointNum == checkInd + 1 || Truck.checkpointNum == checkInd - 1)
+            {
+                Truck.checkpointNum = checkInd;
+
+                Debug.Log(checkInd);
+            }
+        }
     }
 }
