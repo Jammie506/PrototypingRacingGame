@@ -7,8 +7,10 @@ public class DumpTruckAbility : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        myPlayer = GetComponent<RigidbodyMovement>();
     }
+
+    public RigidbodyMovement myPlayer;
 
     public GameObject dumpObject;
     public GameObject dropPoint;
@@ -25,12 +27,26 @@ public class DumpTruckAbility : MonoBehaviour
 
     public void DumpAbility()
     {
-
-        if (Input.GetKeyDown("q") && cooldown <= 0f)
+        if (myPlayer.player == "Player1")
         {
+            if (Input.GetKeyDown(KeyCode.LeftShift) && cooldown <= 0f)
+            {
 
-            Instantiate(dumpObject,dropPoint.transform.position,Quaternion.identity);
-            cooldown = maxCooldown;
+                Instantiate(dumpObject, dropPoint.transform.position, Quaternion.identity);
+                cooldown = maxCooldown;
+            }
+
+        }
+
+        if (myPlayer.player == "Player2")
+        {
+            if (Input.GetKeyDown("b") && cooldown <= 0f)
+            {
+
+                Instantiate(dumpObject, dropPoint.transform.position, Quaternion.identity);
+                cooldown = maxCooldown;
+            }
+
         }
 
 

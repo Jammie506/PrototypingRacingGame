@@ -107,6 +107,7 @@ GameObject:
   - component: {fileID: 685007563935850553}
   - component: {fileID: 685007563935850552}
   - component: {fileID: 685007563935850555}
+  - component: {fileID: 6970805400574667566}
   - component: {fileID: 443120834765818305}
   m_Layer: 0
   m_Name: PickupBad
@@ -193,6 +194,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6970805400574667566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 685007563935850554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a0d1ac933f64f545a1a24d3d240fc21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 50
+  power: 10000
 --- !u!114 &443120834765818305
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -207,13 +222,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destructiblePaths: []
   blockRain: {fileID: 0}
+  explode: {fileID: 6970805400574667566}
   destroyPath: {fileID: 0}
   repairPath: {fileID: 0}
   isPositive: 0
-  rng: 0
   pickupName: 
   displayName: {fileID: 6514203398468991304}
   effect: {fileID: 23761486146076926, guid: d1a02bf183ee9794e851b8da2bd65c67, type: 3}
+  explodeEffect: {fileID: 1522865734221739456, guid: 00c118ece6f38d443bb95aab74fb25c8, type: 3}
 --- !u!1001 &8752793749419923405
 PrefabInstance:
   m_ObjectHideFlags: 0

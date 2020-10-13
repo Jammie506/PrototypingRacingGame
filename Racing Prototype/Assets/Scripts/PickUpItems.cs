@@ -17,13 +17,14 @@ public class PickUpItems : MonoBehaviour
         }
         else
         {
-            rng = Random.Range(0, 2);   // Available events to pick
+            rng = Random.Range(0, 3);   // Available events to pick
         }
     }
     #region Event Variables
     public GameObject[] destructiblePaths;
-
+    [Header("List of events")]
     public RainBlocks blockRain;
+    public Bomb explode;
     public GameObject destroyPath;
 
     public GameObject repairPath;
@@ -32,10 +33,11 @@ public class PickUpItems : MonoBehaviour
 
     byte itemTypeb;
     public bool isPositive; // Defined from seperate prefabs
-    public int rng;
+    private int rng;
     public string pickupName;
     public TextMesh displayName;
     public GameObject effect;
+    public GameObject explodeEffect;
 
     // Update is called once per frame
     void Update()
@@ -92,6 +94,10 @@ public class PickUpItems : MonoBehaviour
                 case 1:
                     pickupName = "Block Rain";
                     break;
+
+                case 2:
+                    pickupName = "EXPLOSION!!!";
+                    break;
             }
         }
         displayName.text = pickupName;
@@ -121,6 +127,10 @@ public class PickUpItems : MonoBehaviour
                 blockRain.spawnBlocks();
                 break;
 
+            case 2:
+                explode.Explode();
+                Instantiate(explodeEffect,transform.position,Quaternion.identity);
+                break;
 
 
         }

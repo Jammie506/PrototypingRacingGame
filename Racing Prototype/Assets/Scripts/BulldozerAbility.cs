@@ -7,7 +7,7 @@ public class BulldozerAbility : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        myPlayer = GetComponent<RigidbodyMovement>();
     }
 
     public GameObject createObstacle;
@@ -23,6 +23,8 @@ public class BulldozerAbility : MonoBehaviour
     public float chargeUpMax = 2f;
     private float chargeup = 0f;
 
+    public RigidbodyMovement myPlayer;
+
     // Update is called once per frame
     void Update()
     {
@@ -35,40 +37,80 @@ public class BulldozerAbility : MonoBehaviour
 
     public void scrapeGround()
     {
-
-        if (Input.GetKey("e"))
+        if (myPlayer.player == "Player1")
         {
+            if (Input.GetKey(KeyCode.LeftShift))
+            {
 
-            dozerEffect.SetActive(true);
+                dozerEffect.SetActive(true);
 
-            chargeup += 1 * Time.deltaTime;
+                chargeup += 1 * Time.deltaTime;
 
+            }
+            else
+            {
+                dozerEffect.SetActive(false);
+
+
+            }
+
+            if (Input.GetKeyUp(KeyCode.LeftShift) && cooldown < 0 && chargeup >= chargeUpMax)
+            {
+
+
+
+                Instantiate(createObstacle, createPoint.transform.position, Quaternion.identity);
+
+                chargeup = 0;
+                cooldown = maxCooldown;
+            }
+            if (cooldown >= 0)
+            {
+                cooldown -= 1 * Time.deltaTime;
+            }
+
+            if (Input.GetKey(KeyCode.LeftShift) != true)
+            {
+                chargeup = 0;
+            }
         }
-        else
+
+        if (myPlayer.player == "Player2")
         {
-            dozerEffect.SetActive(false);
-            
+            if (Input.GetKey("b"))
+            {
 
-        }
+                dozerEffect.SetActive(true);
 
-        if (Input.GetKeyUp("e") && cooldown < 0 && chargeup >= chargeUpMax)
-        {
+                chargeup += 1 * Time.deltaTime;
+
+            }
+            else
+            {
+                dozerEffect.SetActive(false);
+
+
+            }
+
+            if (Input.GetKeyUp("b") && cooldown < 0 && chargeup >= chargeUpMax)
+            {
 
 
 
-            Instantiate(createObstacle, createPoint.transform.position, Quaternion.identity);
+                Instantiate(createObstacle, createPoint.transform.position, Quaternion.identity);
 
-            chargeup = 0;
-            cooldown = maxCooldown;
-        }
-        if (cooldown >= 0)
-        {
-            cooldown -= 1 * Time.deltaTime;
-        }
+                chargeup = 0;
+                cooldown = maxCooldown;
+            }
+            if (cooldown >= 0)
+            {
+                cooldown -= 1 * Time.deltaTime;
+            }
 
-        if (Input.GetKey("e") != true)
-        {
-            chargeup = 0;
+            if (Input.GetKey("b") != true)
+            {
+                chargeup = 0;
+            }
         }
 
 
