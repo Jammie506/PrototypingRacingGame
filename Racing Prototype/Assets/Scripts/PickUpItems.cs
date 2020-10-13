@@ -2,34 +2,47 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class PickUpItems : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
     {
-        eventHolder = GameObject.Find("EventHolder");
-    //    itemTypeb = (byte)Random.Range(0, 1);
-    /*
-        if (itemTypeb == 0)
+        destructiblePaths = GameObject.FindGameObjectsWithTag("GroundDestructible");
+        blockRain = GameObject.Find("RainingBlocksEvent").GetComponent<RainBlocks>();
+
+        if (isPositive)
         {
-            isPositive = false;
+            rng = Random.Range(0,1);    // Available events to pick
         }
-        else if (itemTypeb == 1)
+        else
         {
-            isPositive = true;
+            rng = Random.Range(0, 2);   // Available events to pick
         }
-        */
     }
+    #region Event Variables
+    public GameObject[] destructiblePaths;
+
+    public RainBlocks blockRain;
+    public GameObject destroyPath;
+
+    public GameObject repairPath;
+    #endregion
+
 
     byte itemTypeb;
-    public bool isPositive;
-    public GameObject eventHolder;
+    public bool isPositive; // Defined from seperate prefabs
+    public int rng;
+    public string pickupName;
+    public TextMesh displayName;
     public GameObject effect;
 
     // Update is called once per frame
     void Update()
     {
+        DisplayNameText();
         
+
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -38,11 +51,11 @@ public class PickUpItems : MonoBehaviour
         {
             if (isPositive == true)
             {
-                eventHolder.GetComponent<EventHolder>().PositiveEvent();
+                PositiveEvent();
             }
             else if (isPositive == false)
             {
-                eventHolder.GetComponent<EventHolder>().NegativeEvent();
+                NegativeEvent();
             }
 
 
@@ -51,5 +64,99 @@ public class PickUpItems : MonoBehaviour
 
         }
     }
+
+    private void DisplayNameText()
+    {
+        if (isPositive)
+        {
+            switch (rng)
+            {
+                case 0:
+                    pickupName = "Repair All Tracks";
+                    break;
+
+                case 1:
+
+                    break;
+
+            }
+        }
+        else
+        {
+            switch (rng)
+            {
+                case 0:
+                    pickupName = "Destroy Track";
+                    break;
+
+                case 1:
+                    pickupName = "Block Rain";
+                    break;
+            }
+        }
+        displayName.text = pickupName;
+        // displayName.transform.LookAt(GameObject.Find("Main Camera").transform.position,transform.up);
+        // displayName.transform.localRotation = GameObject.Find("Main Camera").transform.rotation;
+
+        displayName.transform.rotation = Quaternion.LookRotation(displayName.transform.position - GameObject.Find("Main Camera").transform.position);
+
+    }
+
+    #region myEvents
+
+    public void NegativeEvent()
+    {
+
+    //    int rng = Random.Range(0, 2);
+
+        switch (rng)
+        {
+
+            case 0:
+                int rngd = Random.Range(0, destructiblePaths.Length);
+                destructiblePaths[rngd].SetActive(false);
+                break;
+
+            case 1:
+                blockRain.spawnBlocks();
+                break;
+
+
+
+        }
+
+    }
+
+    public void PositiveEvent()
+    {
+    //    int rng = Random.Range(0, 1);
+
+        switch (rng)
+        {
+
+            case 0:
+
+                for (int i = 0; i < destructiblePaths.Length; i++)
+                {
+                    if (destructiblePaths[i].activeSelf != true)
+                        destructiblePaths[i].SetActive(true);
+                }
+
+                break;
+
+            case 1:
+                break;
+
+
+        }
+
+    }
+
+
+
+
+
+    #endregion
+
 
 }

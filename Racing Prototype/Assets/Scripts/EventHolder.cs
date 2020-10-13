@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EventHolder : MonoBehaviour
+public class EventHolder : MonoBehaviour                    // THIS SCRIPTED IS SCRAPPED THE CODE WILL BE MOVED TO PickUpItems.cs
 {
     // Start is called before the first frame update
     void Awake()
