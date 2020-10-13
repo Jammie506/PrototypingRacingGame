@@ -343,12 +343,12 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Prefabs/EffectPrefabs
+    - Assets
     m_Globs: []
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Prefabs/EffectPrefabs
+  - Assets
   m_LastFoldersGridSize: -1
   m_LastProjectPath: D:\Unity\RacingGame Prototype1\PrototypingRacingGame\Racing
     Prototype
@@ -356,8 +356,8 @@ MonoBehaviour:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 463a0000
-    m_LastClickedID: 14918
+    m_SelectedIDs: 203a0000
+    m_LastClickedID: 14880
     m_ExpandedIDs: 00000000203a00002a3a000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -621,11 +621,11 @@ MonoBehaviour:
   m_Rotation:
     m_Target: {x: 0.08716707, y: -0.49740025, z: 0.050303113, w: 0.86168545}
     speed: 2
-    m_Value: {x: 0.0872408, y: -0.49609792, z: 0.050171375, w: 0.86241454}
+    m_Value: {x: -0.08716707, y: 0.49740025, z: -0.050303113, w: -0.86168545}
   m_Size:
     m_Target: 101.6251
     speed: 2
-    m_Value: 2.598076
+    m_Value: 101.6251
   m_Ortho:
     m_Target: 0
     speed: 2
