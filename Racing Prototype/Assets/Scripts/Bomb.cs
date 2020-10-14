@@ -12,6 +12,9 @@ public class Bomb : MonoBehaviour
 
     public float radius = 3f;
     public float power = 3f;
+    public GameObject effect;
+    public bool isObject = false;
+    public bool explodeOnCont;
 
     // Update is called once per frame
     void Update()
@@ -35,7 +38,29 @@ public class Bomb : MonoBehaviour
 
 
         }
+        if (isObject)
+        {
+            if (effect != null) Instantiate(effect, transform.position, Quaternion.identity);
 
+            Destroy(gameObject);
+        }
+
+
+
+        
+
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.collider.tag == "Player" && isObject)
+        {
+            Explode();
+        }
+        else if (collision.collider.tag == "Obstacle" && isObject && explodeOnCont)
+        {
+            Explode();
+        }
     }
 
 }

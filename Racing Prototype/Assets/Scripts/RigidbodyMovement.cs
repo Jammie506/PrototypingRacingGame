@@ -37,11 +37,21 @@ public class RigidbodyMovement : MonoBehaviour
 
     void MoveVehicle()
     {
+        
 
 
 
-        if (Physics.Raycast(transform.position, Vector3.down, rayDist))
-        {
+
+
+
+
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        Debug.Log("Colliding!");
+      //  if (Physics.Raycast(transform.position, Vector3.down, rayDist))
+      //  {
             if (player == "Player1")
             {
                 myRigidbody.maxAngularVelocity = maxTorqueSpeed;
@@ -68,12 +78,12 @@ public class RigidbodyMovement : MonoBehaviour
                 // myRigidbody.velocity = transform.forward * speed * vert;
                 Debug.Log(myRigidbody.velocity);
             }
-            
-        }
+
+      //  }
 
 
-        if (Physics.Raycast(transform.position, Vector3.down, rayDist))
-        {
+     //   if (Physics.Raycast(transform.position, Vector3.down, rayDist))
+       // {
             if (player == "Player2")
             {
                 myRigidbody.maxAngularVelocity = maxTorqueSpeed;
@@ -101,10 +111,7 @@ public class RigidbodyMovement : MonoBehaviour
                 Debug.Log(myRigidbody.velocity);
             }
 
-        }
-
-
-
-
+      //  }
     }
+
 }

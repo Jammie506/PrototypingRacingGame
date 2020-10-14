@@ -9,8 +9,9 @@ public class RainBlocks : MonoBehaviour
     {
     //    spawnBlocks();
     }
-    public GameObject block;
-
+    public GameObject[] block;
+    public float spawnRange = 50;
+    private int rng;
     public int num = 30;
     // Update is called once per frame
     void Update()
@@ -23,8 +24,8 @@ public class RainBlocks : MonoBehaviour
 
         for (int i = 0; i < num; i++)
         {
-
-            Instantiate(block,transform.position + new Vector3(Random.Range(-50,50),Random.Range(-10,20),Random.Range(-50,50)),Quaternion.identity);
+            rng = Random.Range(0,block.Length);
+            Instantiate(block[rng],transform.position + new Vector3(Random.Range(-spawnRange,spawnRange),Random.Range(-10,20),Random.Range(-spawnRange,spawnRange)),Quaternion.identity);
 
         }
 
