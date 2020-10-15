@@ -4,8 +4,5 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes:
-  - enabled: 1
-    path: Assets/Scenes/MunTrack.unity
-    guid: 5525a45ca9002bf4dbd26938c7cdc84c
+  m_Scenes: []
   m_configObjects: {}
