@@ -5011,10 +5011,10 @@ MonoBehaviour:
   myPos: {x: 0, y: 0, z: 0}
   speed: 3000
   torque: 50
-  maxTorqueSpeed: 5
+  maxTorqueSpeed: 2
   rayDist: 1
-  maxVel: 10
-  minVel: -10
+  maxVel: 15
+  minVel: -15
 --- !u!54 &5922474924034236498
 Rigidbody:
   m_ObjectHideFlags: 0

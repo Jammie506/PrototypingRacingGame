@@ -13,9 +13,12 @@ public class PickupSpawner : MonoBehaviour
     }
 
     public GameObject[] pickupPoints;
+    private GameObject[] findPickups;
 
     public GameObject pickupPos;
     public GameObject pickupNeg;
+
+    public GameObject effect;
 
 
     // Update is called once per frame
@@ -25,8 +28,18 @@ public class PickupSpawner : MonoBehaviour
 
     }
 
-    void pickupSpawn()
+    public void pickupSpawn()
     {
+        findPickups = GameObject.FindGameObjectsWithTag("Pickup");
+        if (findPickups != null)
+        {
+            for (int i = 0; i < findPickups.Length; i++)
+            {
+                Destroy(findPickups[i]);
+            }
+        }
+
+
         int rng;
         for (int i = 0; i < pickupPoints.Length; i++)
         {
@@ -34,11 +47,13 @@ public class PickupSpawner : MonoBehaviour
             if (rng == 0)
             {
                 Instantiate(pickupPos, pickupPoints[i].transform.position, pickupPoints[i].transform.rotation);
+                Instantiate(effect,pickupPoints[i].transform.position,Quaternion.identity);
                 Debug.Log("Spawned good");
             }
             else if (rng == 1)
             {
                 Instantiate(pickupNeg, pickupPoints[i].transform.position, pickupPoints[i].transform.rotation);
+                Instantiate(effect, pickupPoints[i].transform.position, Quaternion.identity);
                 Debug.Log("Spawned bad");
             }
             

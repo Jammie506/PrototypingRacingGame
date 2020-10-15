@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.ProBuilder;
 
 
 public class PickUpItems : MonoBehaviour
@@ -19,6 +20,10 @@ public class PickUpItems : MonoBehaviour
         {
             rng = Random.Range(0, 3);   // Available events to pick
         }
+
+
+
+        DisplayNameText();
     }
     #region Event Variables
     public GameObject[] destructiblePaths;
@@ -36,20 +41,22 @@ public class PickUpItems : MonoBehaviour
     private int rng;
     public string pickupName;
     public TextMesh displayName;
+    public GameObject displayMesh;
+    public DisplayPickupList meshList;
     public GameObject effect;
     public GameObject explodeEffect;
 
     // Update is called once per frame
     void Update()
     {
-        DisplayNameText();
+
         
 
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.collider.tag == "Player")
+        if (other.tag == "Player")
         {
             if (isPositive == true)
             {
@@ -75,6 +82,8 @@ public class PickUpItems : MonoBehaviour
             {
                 case 0:
                     pickupName = "Repair All Tracks";
+                    var inst = Instantiate(meshList.pickupList[0],displayMesh.transform.position,Quaternion.identity);
+                    inst.transform.parent = gameObject.transform;
                     break;
 
                 case 1:
@@ -89,14 +98,20 @@ public class PickUpItems : MonoBehaviour
             {
                 case 0:
                     pickupName = "Destroy Track";
+                    var inst1 = Instantiate(meshList.pickupList[0], displayMesh.transform.position, Quaternion.identity);
+                    inst1.transform.parent = gameObject.transform;
                     break;
 
                 case 1:
                     pickupName = "Block Rain";
+                    var inst2 = Instantiate(meshList.pickupList[1], displayMesh.transform.position, Quaternion.identity);
+                    inst2.transform.parent = gameObject.transform;
                     break;
 
                 case 2:
                     pickupName = "EXPLOSION!!!";
+                    var inst3 = Instantiate(meshList.pickupList[2], displayMesh.transform.position, Quaternion.identity);
+                    inst3.transform.parent = gameObject.transform;
                     break;
             }
         }
