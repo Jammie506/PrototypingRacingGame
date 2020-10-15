@@ -32,16 +32,33 @@ public class RigidbodyMovement : MonoBehaviour
         horz2 = Input.GetAxis("Horizontal2");
         vert2 = Input.GetAxis("Vertical2");
 
-        MoveVehicle();
+        
     }
 
-    void MoveVehicle()
+    private void Update()
     {
-        
+        ResetVehicle();
+    }
+
+    void ResetVehicle()
+    {
+        if (player == "Player1")
+        {
+            if (Input.GetKeyDown("r"))
+            {
+                transform.rotation = new Quaternion(0, 0, 0, 0);
+            }
+        }
 
 
 
-
+        if (player == "Player2")
+        {
+            if (Input.GetKeyDown("p"))
+            {
+                transform.rotation = new Quaternion(0, 0, 0, 0);
+            }
+        }
 
 
 
@@ -65,7 +82,7 @@ public class RigidbodyMovement : MonoBehaviour
                     myRigidbody.AddRelativeTorque(Vector3.up * -torque, ForceMode.Acceleration);
                 }
 
-
+            
                 //  myRigidbody.angularVelocity();
 
                 if (myRigidbody.velocity.z < maxVel && myRigidbody.velocity.z > minVel && myRigidbody.velocity.x < maxVel && myRigidbody.velocity.x > minVel)
@@ -97,6 +114,10 @@ public class RigidbodyMovement : MonoBehaviour
                     myRigidbody.AddRelativeTorque(Vector3.up * -torque, ForceMode.Acceleration);
                 }
 
+            if (Input.GetKeyDown("p"))
+            {
+                transform.rotation = new Quaternion(0, 0, 0, 0);
+            }
 
                 //  myRigidbody.angularVelocity();
 

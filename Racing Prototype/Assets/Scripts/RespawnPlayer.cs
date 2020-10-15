@@ -21,29 +21,29 @@ public class RespawnPlayer : MonoBehaviour
             if (Truck.checkpointNum == 0)
             {
                 Truck.transform.position = respawn1.transform.position;
-                Truck.transform.rotation = Quaternion.identity;
-                Instantiate(effect, Truck.transform.position,Quaternion.identity);
+                Truck.transform.rotation = transform.rotation;
+                Instantiate(effect, Truck.transform.position,transform.localRotation);
             }
             
             if (Truck.checkpointNum == 1)
             {
                 Truck.transform.position = respawn2.transform.position;
-                Truck.transform.rotation = Quaternion.identity;
-                Instantiate(effect, Truck.transform.position, Quaternion.identity);
+                Truck.transform.rotation = transform.rotation;
+                Instantiate(effect, Truck.transform.position, transform.localRotation);
             }
             
             if (Truck.checkpointNum == 2)
             {
                 Truck.transform.position = respawn3.transform.position;
-                Truck.transform.rotation = Quaternion.identity;
-                Instantiate(effect, Truck.transform.position, Quaternion.identity);
+                Truck.transform.rotation = transform.rotation;
+                Instantiate(effect, Truck.transform.position, transform.localRotation);
             }
             
             if (Truck.checkpointNum == 3)
             {
                 Truck.transform.position = respawn4.transform.position;
-                Truck.transform.rotation = Quaternion.identity;
-                Instantiate(effect, Truck.transform.position, Quaternion.identity);
+                Truck.transform.rotation = transform.rotation;
+                Instantiate(effect, Truck.transform.position, transform.localRotation);
             }
         }
     }
